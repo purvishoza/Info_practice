@@ -1,0 +1,72 @@
+[{
+  Group: "Requirement",
+  Activity:"Requirement analysis",
+  Developer: "R",
+  Agile_Project_Owner: "A",
+  Scrum_Master: "C",
+  SDET: "I",
+  TechLead:"",
+  TechnicalPO:"R",
+  Architect:"",
+  Automation:"C"
+},
+{
+  Group: "Requirement",
+  Activity:"Pull in work and create epic and stories",
+  Developer: "R",
+  Agile_Project_Owner: "A",
+  Scrum_Master: "",
+  SDET: "I",
+  TechLead:"",
+  TechnicalPO:"C",
+  Architect:"",
+  Automation:"A"
+},
+{
+  Group: "Requirement",
+  Activity:"Internal demos or desk checks",
+  Developer: "R",
+  Agile_Project_Owner: "A",
+  Scrum_Master: "A ",
+  SDET: "I",
+  TechLead:"",
+  TechnicalPO:"R",
+  Architect:"I",
+  Automation:""
+},
+{
+  Group: "CI/CD",
+  Activity: "Code Promotion and validation",
+  Developer: "C",
+  Agile_Project_Owner: "I",
+  Scrum_Master: "R",
+  SDET: "A",
+  TechLead:"",
+  TechnicalPO:"",
+  Architect:"I",
+  Automation:""
+},
+{
+  Group: "CI/CD",
+  Activity: "CI/CD Pipeline Management",
+  Developer: "R",
+  Agile_Project_Owner: "C",
+  Scrum_Master: "",
+  SDET: "I",
+  TechLead:"",
+  TechnicalPO:"A",
+  Architect:"",
+  Automation:"R"
+},
+{
+  Group: "Agile Practice",
+  Activity: "Facilitate Scrum Meetings and plan sprints",
+  Developer: "A",
+  Agile_Project_Owner: "R",
+  Scrum_Master: "",
+  SDET: "",
+  TechLead:"I",
+  TechnicalPO:"I",
+  Architect:"",
+  Automation:"C"
+}]

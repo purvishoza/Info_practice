@@ -1,0 +1,61 @@
+<header>
+  <nav>
+    <div class = "table1" >
+      <label id = "group">Group: </label>
+        <select [(ngModel)] = "user.group" (ngModelChange) = "SearchProduct(user.group)" style="margin:10px ">
+          <option *ngFor = "let use of user" >
+            {{use.group}}
+          </option>
+        </select>
+
+<label id = "group">Activity: </label>
+  <select [(ngModel)] = "user1.activity" (ngModelChange) = "SearchActivity(user1.activity)" style="margin:10px ">
+      <option *ngFor = "let use1 of user1" >
+          {{use1.activity}}
+      </option>
+  </select>
+      </div>
+    </nav>
+</header>
+
+<div *ngIf="user.group" id = "group">
+    <h5>You have selected: {{user.group}} Group </h5>
+</div>
+<div *ngIf="user1.activity" id = "activity">
+    <h5>You have selected: {{user1.activity}} Activity </h5>
+</div>
+
+<div id = "data" >RACI ANALYSIS MATRIX</div>
+
+ <div class = ".dropdown" style="text-align:center">
+          <table id="customers">
+            <thead >
+              <tr >
+                <th>Group</th>
+                <th>Activity</th>
+                <th>Developer</th>
+                <th>Agile Project Manager</th>
+				        <th>Scrum Master</th>
+				        <th>SDET</th>
+                <th>TechLead</th>
+                <th>TechnicalPO</th>
+                <th>Architect</th>
+                <th>Automation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor = "let Prod of ProductDetails">
+                <td >{{Prod.Group}}</td>
+                <td>{{Prod.Activity}}</td>
+				        <td>{{Prod.Developer}}</td>
+		            <td>{{Prod.Agile_Project_Owner}}</td>
+				        <td>{{Prod.Scrum_Master}}</td>
+				        <td>{{Prod.SDET}}</td>
+                <td>{{Prod.TechLead}}</td>
+                <td>{{Prod.TechnicalPO}}</td>
+                <td>{{Prod.Architect}}</td>
+                <td>{{Prod.Automation}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>

@@ -2,23 +2,31 @@
   <nav>
     <div class = "table1" >
       <label id = "group">Group: </label>
-        <select [(ngModel)] = "user.group" (ngModelChange) = "SearchProduct(user.group)" style="margin:10px ">
-          <option *ngFor = "let use of user" >
-            {{use.group}}
+        <select [(ngModel)] = "Products.group" (ngModelChange) = "SearchProduct(Products.group)"  style="margin:10px ">
+          <option *ngFor = "let use of Products" >
+            {{use.Group}}
           </option>
         </select>
 
 <label id = "group">Activity: </label>
-  <select [(ngModel)] = "user1.activity" (ngModelChange) = "SearchActivity(user1.activity)" style="margin:10px ">
-      <option *ngFor = "let use1 of user1" >
-          {{use1.activity}}
+  <select [(ngModel)] = "ProductDetails.Activity" (ngModelChange) = "SearchActivity(ProductDetails.activity)" style="margin:10px ">
+    <option style="display:none"></option>
+        <option *ngFor = "let use1 of ProductDetails" >
+          {{use1.Activity}}
       </option>
   </select>
+
+  <label id = "group">Responsible: </label>
+    <select [(ngModel)] = "Products.responsible" (ngModelChange) = "SearchRole(user1.responsible)" style="margin:10px">
+        <option *ngFor = "let use2 of user1">
+            {{use2.responsible}}
+        </option>
+    </select>
       </div>
     </nav>
 </header>
 
-<div *ngIf="user.group" id = "group">
+<div *ngIf="Products.group" id = "group">
     <h5>You have selected: {{user.group}} Group </h5>
 </div>
 <div *ngIf="user1.activity" id = "activity">

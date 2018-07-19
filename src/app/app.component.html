@@ -1,69 +1,20 @@
-<header>
-  <nav>
-    <div class = "table1" >
-      <label id = "group">Group: </label>
-        <select [(ngModel)] = "Products.group" (ngModelChange) = "SearchProduct(Products.group)"  style="margin:10px ">
-          <option *ngFor = "let use of Products" >
-            {{use.Group}}
-          </option>
-        </select>
+<div style="text-align:center">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/signup">Sign Up</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-<label id = "group">Activity: </label>
-  <select [(ngModel)] = "ProductDetails.Activity" (ngModelChange) = "SearchActivity(ProductDetails.activity)" style="margin:10px ">
-    <option style="display:none"></option>
-        <option *ngFor = "let use1 of ProductDetails" >
-          {{use1.Activity}}
-      </option>
-  </select>
-
-  <label id = "group">Responsible: </label>
-    <select [(ngModel)] = "Products.responsible" (ngModelChange) = "SearchRole(user1.responsible)" style="margin:10px">
-        <option *ngFor = "let use2 of user1">
-            {{use2.responsible}}
-        </option>
-    </select>
-      </div>
-    </nav>
-</header>
-
-<div *ngIf="Products.group" id = "group">
-    <h5>You have selected: {{user.group}} Group </h5>
 </div>
-<div *ngIf="user1.activity" id = "activity">
-    <h5>You have selected: {{user1.activity}} Activity </h5>
-</div>
-
-<div id = "data" >RACI ANALYSIS MATRIX</div>
-
- <div class = ".dropdown" style="text-align:center">
-          <table id="customers">
-            <thead >
-              <tr >
-                <th>Group</th>
-                <th>Activity</th>
-                <th>Developer</th>
-                <th>Agile Project Manager</th>
-				        <th>Scrum Master</th>
-				        <th>SDET</th>
-                <th>TechLead</th>
-                <th>TechnicalPO</th>
-                <th>Architect</th>
-                <th>Automation</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor = "let Prod of ProductDetails">
-                <td >{{Prod.Group}}</td>
-                <td>{{Prod.Activity}}</td>
-				        <td>{{Prod.Developer}}</td>
-		            <td>{{Prod.Agile_Project_Owner}}</td>
-				        <td>{{Prod.Scrum_Master}}</td>
-				        <td>{{Prod.SDET}}</td>
-                <td>{{Prod.TechLead}}</td>
-                <td>{{Prod.TechnicalPO}}</td>
-                <td>{{Prod.Architect}}</td>
-                <td>{{Prod.Automation}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+<router-outlet></router-outlet>

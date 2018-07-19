@@ -1,12 +1,15 @@
-/*import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 
-@Injectable()
-export class UserService{
+@Injectable({
+  providedIn: 'root'
+})
+export class UserService {
 
-  private _url: string = "/assests/data/group.json";
+  constructor(private http: HttpClient) { }
 
-  getUsers(){
-    return this.http.get(this._url);
+  registerUser(userData): Observable<any> {
+    return this.http.post('http://loginapi.com:8000/api/v1/rest-auth/registration/', userData)
   }
 }
-*/

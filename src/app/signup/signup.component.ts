@@ -40,6 +40,6 @@ export class SignupComponent implements OnInit {
     this.register.password1 = '';
     this.register.password2 = '';
     this.register.email = '';
-    this.register.phone_number = '';
+    this.register.phone_number = ''
   }
 }

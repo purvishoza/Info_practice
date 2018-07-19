@@ -1,10 +1,9 @@
-<div class="" style="text-align:center">
-  <h1>Welcome to RACI App</h1>
-  <input [(ngModel)]="register.first_name" placeholder="First Name"><br>
-  <input [(ngModel)]="register.last_name" placeholder="Last Name"><br>
+<div class="signup">  <h3 id = "h3">Welcome to RACI App</h3>
+  <input [(ngModel)]="register.first_name" type="text" placeholder="First Name"><br>
+  <input [(ngModel)]="register.last_name" type="text" placeholder="Last Name"><br>
   <input [(ngModel)]="register.password1" type="password" placeholder="Password"><br>
   <input [(ngModel)]="register.password2" type="password" placeholder="Repeat Password"><br>
-  <input [(ngModel)]="register.email" placeholder="E-mail Address"><br>
-  <input [(ngModel)]="register.phone_number" placeholder="Phone Number"><br>
-  <button (click)="registerUser()" type="button" name="button">Register User</button>
+  <input [(ngModel)]="register.email" type="email" placeholder="E-mail Address"><br>
+  <input [(ngModel)]="register.phone_number" type="number" placeholder="Phone Number"><br>
+  <button class = "button" (click)="registerUser()" type="button" name="button">Register User</button>
 </div>

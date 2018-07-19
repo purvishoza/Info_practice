@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { AppModule } from '../app.module';
-import { UserService } from '../user.service';
+//import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-    providers: [UserService]
+    providers: []
 })
 export class LoginComponent implements OnInit {
   logon;
 
-  constructor(private userService:UserService, private route: Router) { }
+  constructor(){}//private userService:UserService, private route: Router) { }
 
   ngOnInit() {
     this.logon = {
@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     };
   }
 
-  login(){
+/*  login(){
     this.userService.login(this.logon).subscribe(
       response => {
         this.route.navigate(['/raci']);
@@ -32,6 +32,6 @@ export class LoginComponent implements OnInit {
     );
     this.logon.password = '';
     this.logon.email = '';
-  }
+  } */
 
 }

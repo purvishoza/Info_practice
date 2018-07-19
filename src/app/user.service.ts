@@ -14,9 +14,9 @@ export class UserService {
     return this.http.post('http://loginapi.com:8000/api/v1/rest-auth/registration/', userData)
   }
 
-  login(userData): Observable<any> {
-    return this.http.post('http://loginapi.com:8000/api/v1/rest-auth/login/', userData)
-  }
+  //login(userData): Observable<any> {
+    //return this.http.post('http://loginapi.com:8000/api/v1/rest-auth/login/', userData)
+  //}
 }
 /*userAuthentication(userName, password) {
   var data = "username=" + userName + "&password=" + password + "&grant_type=password";

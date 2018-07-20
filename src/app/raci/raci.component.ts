@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import {UserService} from '../user.service';
-import {User} from './user';
-import { AppModule } from './app.module';
+//import {User} from './user';
+import { AppModule } from '../app.module';
 import {Http, Response} from '@angular/http';
 
 
@@ -13,14 +13,14 @@ import {Http, Response} from '@angular/http';
 })
 
 export class RaciComponent {
-  data :string;
-  loading: boolean;
+//  data :string;
+//  loading: boolean;
  //user: User[];
 public ProductDetails: object = [];
 //public filteredGroup = [];
 //public filteredActivities = [];
 //public filteredRoles = [];
- /*user = [
+ user = [
    {
      group: "Requirement"
    },
@@ -160,10 +160,10 @@ Products = [
 
   }
 ];
-*/
-constructor(private http: Http ){}
 
-/*{
+constructor( )
+
+{
   this.getProducts();
 }
 getProducts()
@@ -185,7 +185,7 @@ SearchActivity(activity:string)
   let obj = this.Products.filter(a => a.Activity == activity);
   this.ProductDetails = obj;
 }
-} */
+}
 /*SearchRole(Products:array)
 {
   for(let i = 0; i<Products.length; i++)
@@ -197,7 +197,7 @@ SearchActivity(activity:string)
 
     }
   }*/
-  makeRequest(): void {
+/*  makeRequest(): void {
     this.loading = true;
     this.http.request('http://jsonplaceholder.typicode.com/posts/1')
     .subscribe((res: Response) => {
@@ -205,7 +205,7 @@ SearchActivity(activity:string)
       this.loading = false;
     });
 }
-}
+}*/
 
 /*  ngOnInit()
   {

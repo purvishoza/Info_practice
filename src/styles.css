@@ -1,5 +1,5 @@
 @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
-/*.login{
+.login{
   border: 3px solid skyblue;
   margin-bottom:100px auto;
   height: 300px;
@@ -8,6 +8,8 @@
     padding: 20px 10px 10px 20px;
     font: 15px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
+
+
 .signup
 {
     border: 3px solid skyblue;
@@ -40,7 +42,7 @@ button:hover {
       border-radius: 6px;
       height: 150px;
       margin: 20px auto 0;
-      width: 300px;
+      width: 800px;
       box-shadow: 5px 10px #888888;
 }
 .login input[type=email]
@@ -135,18 +137,26 @@ padding-bottom: 5px;
 }
 body{
   background: url(src/bg.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+
+
+
 }
 .tabs{
     height: 65px;
+    align: center;
+}
+
+.row{
+  margin: auto;
 }
 .tabs .tab{
     text-transform : none !important;
     line-height: 65px;
+    align-content: center;
+    display: inline-block;
+    padding-left: 100px;
     height: 65px;
+
 }
 .tabs .tab a{
     font-size: 25px;
@@ -155,4 +165,4 @@ body{
 
 .tabs .tab a.active{
     background-color: skyblue !important;
-} */
+}

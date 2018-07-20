@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppModule } from '../app.module';
-//import { UserService } from '../user.service';
+import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   logon;
 
-  constructor(){}//private userService:UserService, private route: Router) { }
+  constructor(private userService:UserService, private route: Router) { }
 
   ngOnInit() {
     this.logon = {
@@ -21,17 +21,18 @@ export class LoginComponent implements OnInit {
     };
   }
 
-/*  login(){
+  login(){
     this.userService.login(this.logon).subscribe(
       response => {
+        console.log(response);
         this.route.navigate(['/raci']);
       },
       error => {
         console.log('error', error);
       }
     );
-    this.logon.password = '';
-    this.logon.email = '';
-  } */
+    //this.logon.password = '';
+    //this.logon.email = '';
+  }
 
 }

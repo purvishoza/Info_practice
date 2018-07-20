@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { Routes, RouterModule } from '@angular/router';
+import { RaciComponent} from './raci/raci.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,10 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
+    path: 'raci',
+    component: RaciComponent,
+  },
+  {
     path: '',
     redirectTo: '/',
     pathMatch: 'full'
@@ -23,6 +28,7 @@ const routes: Routes = [
     path: '**',
     redirectTo: '/',
   },
+
 ];
 
 @NgModule({

@@ -1,8 +1,10 @@
+<header>
+  <div class="container">
 <div>
     <div class = "table1" >
       <label id = "group">Group: </label>
-        <select [(ngModel)] = "Products.group" (ngModelChange) = "SearchProduct(Products.group)"  style="margin:10px ">
-          <option *ngFor = "let use of Products" >
+        <select [(ngModel)] = "ProductDetails.Group" (ngModelChange) = "getData(ProductDetails.Group)"  style="margin:10px ">
+          <option *ngFor = "let use of ProductDetails" value="{{use}}" >
             {{use.Group}}
           </option>
         </select>
@@ -14,13 +16,18 @@
       </option>
   </select>
   <label id = "group">Responsible: </label>
-    <select [(ngModel)] = "Products.responsible" (ngModelChange) = "SearchRole(user1.responsible)" style="margin:10px">
-        <option *ngFor = "let use2 of user1">
-            {{use2.responsible}}
+    <select [(ngModel)] = "ProductDetails.Developer" (ngModelChange) = "SearchRole(user1.responsible)" style="margin:10px">
+        <option *ngFor = "let use2 of ProductDetails">
+            {{use2.Developer}}
         </option>
     </select>
 </div>
+<button id="submit" (click)="logout()" type="submit" name="button" routerLink='/logout' routerLinkActive='active'> Logout</button>
+
     </div>
+  </div>
+</header>
+
           <table id="customers">
             <thead>
               <tr >

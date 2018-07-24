@@ -4,18 +4,28 @@
   margin-bottom:100px auto;
   height: 300px;
   margin-top: 120px;
+
+  margin-left: 420px;
     max-width: 400px;
     padding: 20px 10px 10px 20px;
     font: 15px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
+ #submit
+{
+  margin-left: 550px;
 
+  margin-bottom: 500px;
 
+  width: 10%;
+}
 .signup
 {
     border: 3px solid skyblue;
     margin-bottom:100px auto;
     height: 550px;
     margin-top: 100px;
+    margin-left: 420px;
+
       max-width: 400px;
       padding: 20px 10px 10px 20px;
       text-align: center;
@@ -28,9 +38,11 @@ button {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 50%;
+
     opacity: 0.9;
 }
+
 
 button:hover {
     opacity:1;

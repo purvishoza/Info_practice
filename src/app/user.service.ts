@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { Response } from "@angular/http";
 import { AppRoutingModule } from './app-routing.module';
 import {Products} from './products';
-import {LocalStorageService} from './LocalStorageService';
+//import {LocalStorageService} from './LocalStorageService';
 
 
 @Injectable({
@@ -34,5 +34,10 @@ getData(getdata) : Observable<any> {
 //a.append('Authorization', 'Bearer' + this.localstorageService.GetValueFromLocalStorage().access_token)
        return this.http.get<Products[]>('http://loginapi.com:8000/api/v1/raci/', getdata);
 
+   }
+
+   getToken()
+   {
+     return localStorage.getItem('token');
    }
 }

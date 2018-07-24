@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppModule } from '../app.module';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
-//import {LocalStorageService} from '../LocalStorageService';
+
 
 @Component({
   selector: 'app-login',
@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   logon;
 
-  constructor(private userService:UserService, private route: Router){}//private localstorageService: LocalStorageService) { }
+  constructor(private userService:UserService, private route: Router) { }
 
   ngOnInit() {
     this.logon = {
@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
     this.userService.login(this.logon).subscribe(
       response => {
         console.log(response);
-      //  this.localstorageService.SetAuthorization();//'userToken', response.access_token);
         this.route.navigate(['/raci']);
         console.log("after login");
       },

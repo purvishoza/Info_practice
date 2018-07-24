@@ -19,7 +19,7 @@ const routes: Routes = [
   },
   {
     path: 'raci',
-    component: RaciComponent, canActivate: [AuthGuard],
+    component: RaciComponent,
   },
   {
     path: 'logout',

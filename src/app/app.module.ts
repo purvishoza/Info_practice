@@ -12,7 +12,7 @@ import {UserService} from './user.service';
 import {AuthGuard} from './auth.guard';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import  {TokenInterceptorService} from './token-interceptor.service';
-//import {LocalStorageService} from './LocalStorageService';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import  {TokenInterceptorService} from './token-interceptor.service';
 
 
   ],
-  providers: [UserService, AuthGuard {//LocalStorageService {
+  providers: [UserService, AuthGuard, {
     provide: HTTP_INTERCEPTORS,
    useClass: TokenInterceptorService,
 multi: true,

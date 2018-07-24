@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppModule } from '../app.module';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
-import {LocalStorageService} from '../LocalStorageService';
+//import {LocalStorageService} from '../LocalStorageService';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     this.userService.login(this.logon).subscribe(
       response => {
         console.log(response);
-        this.localstorageService.SetAuthorization();//'userToken', response.access_token);
+      //  this.localstorageService.SetAuthorization();//'userToken', response.access_token);
         this.route.navigate(['/raci']);
         console.log("after login");
       },

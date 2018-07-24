@@ -3,7 +3,7 @@ import {UserService} from '../user.service';
 import { AppModule } from '../app.module';
 import {Http, Response} from '@angular/http';
 import {HttpClient} from '@angular/common/http';
-import {LocalStorageService} from '../LocalStorageService';
+//import {LocalStorageService} from '../LocalStorageService';
 
 
 

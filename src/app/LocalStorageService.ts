@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+/*import {Injectable} from '@angular/core';
 
 @Injectable(){}
 
@@ -14,3 +14,4 @@ access_token:string;
     }
 
 }
+*/

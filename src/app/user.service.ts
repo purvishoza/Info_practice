@@ -4,21 +4,23 @@ import { Observable } from 'rxjs/Observable';
 import { Response } from "@angular/http";
 import { AppRoutingModule } from './app-routing.module';
 import {Products} from './products';
-//import {LocalStorageService} from './LocalStorageService';
+import {HttpErrorResponse} from '@angular/common/http';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-//  loggedIn:boolean;
-  constructor(private http: HttpClient){}//private localstorageService: LocalStorageService) {}
+
+token: string = '12345678';
+  constructor(private http: HttpClient){}
 
   registerUser(userData): Observable<any> {
     return this.http.post('http://loginapi.com:8000/api/v1/rest-auth/registration/', userData)
   }
 
   login(logindata): Observable<any> {
+    
     return this.http.post('http://loginapi.com:8000/api/v1/rest-auth/login/', logindata)
 
 }
@@ -38,6 +40,6 @@ getData(getdata) : Observable<any> {
 
    getToken()
    {
-     return localStorage.getItem('token');
+     return this.token;
    }
 }

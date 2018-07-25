@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         console.log(response);
         localStorage.setItem('token', response['key']);
         this.route.navigate(['/raci']);
-        console.log("after login");
+      //  console.log("after login");
       },
 
       error =>  {

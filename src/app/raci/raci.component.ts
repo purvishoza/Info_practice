@@ -7,9 +7,6 @@ import {HttpErrorResponse} from '@angular/common/http';
 import { Router } from '@angular/router';
 
 
-
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './raci.component.html',
@@ -19,6 +16,9 @@ import { Router } from '@angular/router';
 
 export class RaciComponent {
 public ProductDetails = [];
+public Roles = [];
+public Activities = [];
+public Groups = [];
 
 constructor(private userService: UserService, private http: HttpClient, private route: Router){}
 
@@ -34,14 +34,14 @@ constructor(private userService: UserService, private http: HttpClient, private 
         this.route.navigate(['/login']);
       }
     }
-  
+
 
   getData()
   {
     this.userService.getData().subscribe(response =>
        {
-      this.ProductDetails = response;
-    console.log(response);
+         this.ProductDetails = response;
+         console.log(response);
   },
   error =>  {
     console.log('error', error);

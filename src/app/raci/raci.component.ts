@@ -29,16 +29,18 @@ constructor(private userService: UserService, private http: HttpClient, private 
     {
       //this.global =
       this.getData();
+    }
       else{
         this.route.navigate(['/login']);
       }
     }
-  }
+  
 
-  getData(){
+  getData()
+  {
     this.userService.getData().subscribe(response =>
        {
-         //this.ProductDetails;
+      this.ProductDetails = response;
     console.log(response);
   },
   error =>  {
@@ -46,19 +48,6 @@ constructor(private userService: UserService, private http: HttpClient, private 
   });
 }
 }
-//  getData(){
-  //  this.userService.getData().subscribe(
-    //  response => {
-      //  console.log(response);
-      //},
-      //error => {
-      //  console.log('error', error);
-      //}
-
-    //);
-
-
-
 
 /*SearchRole(Products:array)
 {

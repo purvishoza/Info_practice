@@ -21,20 +21,23 @@ export class LoginComponent implements OnInit {
         email:'',
         password:''
     };
-  }
+  //  if ( localStorage.getItem('token'))
+    //{
+      //this.route.navigate(['/raci']);
+    //}
+}
 
   loginUser(){
     this.userService.login(this.logon).subscribe(
       (response : any) => {
         console.log(response);
         localStorage.setItem('token', response['key']);
-//this.global.me = response[];
         this.route.navigate(['/raci']);
         console.log("after login");
       },
 
       error =>  {
-        console.log('error', err);
+        console.log('error', error);
       }
     );
   }

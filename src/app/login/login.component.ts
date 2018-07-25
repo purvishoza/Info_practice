@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppModule } from '../app.module';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import {HttpErrorResponse} from '@angular/common/http';
 
 
 @Component({
@@ -24,18 +25,19 @@ export class LoginComponent implements OnInit {
 
   loginUser(){
     this.userService.login(this.logon).subscribe(
-      response => {
+      (response : any) => {
         console.log(response);
+        localStorage.setItem('token', response['key']);
+//this.global.me = response[];
         this.route.navigate(['/raci']);
         console.log("after login");
       },
-      error => {
-        console.log('error', error);
-      }
 
-    );}
-    //this.logon.password = '';
-    //this.logon.email = '';
+      error =>  {
+        console.log('error', err);
+      }
+    );
+  }
 
 
 }

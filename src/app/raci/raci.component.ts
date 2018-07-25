@@ -3,7 +3,10 @@ import {UserService} from '../user.service';
 import { AppModule } from '../app.module';
 import {Http, Response} from '@angular/http';
 import {HttpClient} from '@angular/common/http';
-//import {LocalStorageService} from '../LocalStorageService';
+import {HttpErrorResponse} from '@angular/common/http';
+import { Router } from '@angular/router';
+
+
 
 
 
@@ -17,17 +20,32 @@ import {HttpClient} from '@angular/common/http';
 export class RaciComponent {
 public ProductDetails = [];
 
-constructor(private userService: UserService, private http: HttpClient){} //private localstorageService: LocalStorageService){}
-//displaytoken: string;
-//access_token:string;
+constructor(private userService: UserService, private http: HttpClient, private route: Router){}
+
 
   ngOnInit(){
-    //this.displaytoken = this.localstorageService.GetValueFromLocalStorage().access_token;
-    this.userService.getData(this.ProductDetails).subscribe(data => this.ProductDetails = data);
-    console.log("from raci");
 
+    if(localStorage.getItem('token'))
+    {
+      //this.global =
+      this.getData();
+      else{
+        this.route.navigate(['/login']);
+      }
+    }
   }
 
+  getData(){
+    this.userService.getData().subscribe(response =>
+       {
+         //this.ProductDetails;
+    console.log(response);
+  },
+  error =>  {
+    console.log('error', error);
+  });
+}
+}
 //  getData(){
   //  this.userService.getData().subscribe(
     //  response => {
@@ -38,7 +56,6 @@ constructor(private userService: UserService, private http: HttpClient){} //priv
       //}
 
     //);
-}
 
 
 

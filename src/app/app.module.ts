@@ -10,8 +10,6 @@ import { RaciComponent } from './raci/raci.component';
 import { LogoutComponent } from './logout/logout.component';
 import {UserService} from './user.service';
 import {AuthGuard} from './auth.guard';
-import {HTTP_INTERCEPTORS} from '@angular/common/http';
-import  {TokenInterceptorService} from './token-interceptor.service';
 
 
 @NgModule({
@@ -31,11 +29,7 @@ import  {TokenInterceptorService} from './token-interceptor.service';
 
 
   ],
-  providers: [UserService, AuthGuard, {
-    provide: HTTP_INTERCEPTORS,
-   useClass: TokenInterceptorService,
-multi: true,
-  }],
+  providers: [UserService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

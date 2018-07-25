@@ -5,7 +5,7 @@ import { Response } from "@angular/http";
 import { AppRoutingModule } from './app-routing.module';
 import {Products} from './products';
 import {HttpErrorResponse} from '@angular/common/http';
-
+import {AuthGuard} from './auth.guard';
 
 @Injectable({
   providedIn: 'root'

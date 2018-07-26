@@ -19,7 +19,7 @@ public ProductDetails = [];
 public Roles = [];
 public Activities = [];
 public Groups = [];
-
+loggedout;
 constructor(private userService: UserService, private http: HttpClient, private route: Router){}
 
 
@@ -45,6 +45,23 @@ constructor(private userService: UserService, private http: HttpClient, private 
   error =>  {
     console.log('error', error);
   });
+}
+
+logoutUser(){
+  this.userService.logout(this.loggedout).subscribe(
+    response => {
+      console.log(response);
+      console.log("from logout");
+      localStorage.removeItem('token');
+      this.route.navigate(['/login']);
+    },
+    error => {
+      console.log('error', error);
+    }
+
+  );
+  //this.logon.password = '';
+  //this.logon.email = '';
 }
 }
 

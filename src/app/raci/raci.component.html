@@ -1,3 +1,8 @@
+<div style="color:red">
+  <div>First Name:{{userdetail?.first_name}}</div><br>
+  <div>Last Name:{{userdetail?.last_name}}</div><br>
+</div>
+
 <header>
   <div class="container">
 <div>
@@ -15,14 +20,14 @@
           {{use1.Activity}}
       </option>
   </select>
-  <label id = "group">Responsible: </label>
+  <label id = "group">Role: </label>
     <select [(ngModel)] = "ProductDetails.Developer" (ngModelChange) = "SearchRole(user1.responsible)" style="margin:10px">
         <option *ngFor = "let use2 of ProductDetails">
             {{use2.Developer}}
         </option>
     </select>
 </div>
-<button id="submit" (click)="logout()" type="submit" name="button" routerLink='/logout' routerLinkActive='active'> Logout</button>
+<button id="submit" (click)="logoutUser()" type="submit" name="button" routerLink='/logout' routerLinkActive='active'> Logout</button>
 
     </div>
   </div>

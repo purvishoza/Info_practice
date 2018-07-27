@@ -3,16 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { SignupComponent } from './signup/signup.component';
+import { SignupComponent } from './user/signup/signup.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './user/login/login.component';
 import { RaciComponent } from './raci/raci.component';
-import { LogoutComponent } from './logout/logout.component';
 import {UserService} from './user.service';
 import {AuthGuard} from './auth.guard';
-//import {HTTP_INTERCEPTORS} from '@angular/common/http';
-//import  {TokenInterceptorService} from './token-interceptor.service';
-//import {LocalStorageService} from './LocalStorageService';
+import { UserComponent } from './user/user.component';
+//import { GroupPipe } from './group.pipe';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +19,8 @@ import {AuthGuard} from './auth.guard';
     SignupComponent,
     LoginComponent,
     RaciComponent,
-    LogoutComponent
+    UserComponent,
+    
 
   ],
   imports: [
@@ -31,11 +31,7 @@ import {AuthGuard} from './auth.guard';
 
 
   ],
-  providers: [UserService, AuthGuard]//LocalStorageService {
-  //  provide: HTTP_INTERCEPTORS,
-  ///  useClass: TokenInterceptorService,
-//multi: true,
-//  }],
-  bootstrap: [AppComponent]
+  providers: [UserService], //AuthGuard],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

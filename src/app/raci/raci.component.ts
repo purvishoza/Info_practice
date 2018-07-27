@@ -5,7 +5,8 @@ import {Http, Response} from '@angular/http';
 import {HttpClient} from '@angular/common/http';
 import {HttpErrorResponse} from '@angular/common/http';
 import { Router } from '@angular/router';
-
+import { Pipe, PipeTransform } from '@angular/core';
+//import {GroupPipe} from '../group.pipe';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,7 @@ export class RaciComponent {
 public ProductDetails = [];
 public Roles = [];
 public Activities = [];
-public Groups = [];
+//public Groups = [];
 loggedout;
 public userdetail;
 constructor(private userService: UserService, private http: HttpClient, private route: Router){}
@@ -63,6 +64,8 @@ constructor(private userService: UserService, private http: HttpClient, private 
     console.log('error', error);
   });
 }
+
+
 
 logoutUser(){
   this.userService.logout(this.loggedout).subscribe(

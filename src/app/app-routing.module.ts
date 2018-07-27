@@ -1,30 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SignupComponent } from './signup/signup.component';
-import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './user/signup/signup.component';
+import { LoginComponent } from './user/login/login.component';
 import { Routes, RouterModule } from '@angular/router';
 import { RaciComponent} from './raci/raci.component';
-//import { LogoutComponent } from './logout/logout.component'
 import {AuthGuard} from './auth.guard';
-
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {
     path: 'signup',
-    component: SignupComponent,
+    component: UserComponent,
+    children: [{path: '', component: SignupComponent}]
   },
   {
     path: 'login',
-    component: LoginComponent,
+    component: UserComponent,
+    children: [{path: '', component: LoginComponent}]
   },
   {
     path: 'raci',
     component: RaciComponent,canActivate: [AuthGuard],
   },
-/*  {
-    path: 'logout',
-    component: LogoutComponent,
-  }, */
   {
     path: '',
     redirectTo: '/',

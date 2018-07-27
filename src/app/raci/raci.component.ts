@@ -20,6 +20,7 @@ public Roles = [];
 public Activities = [];
 public Groups = [];
 loggedout;
+public userdetail;
 constructor(private userService: UserService, private http: HttpClient, private route: Router){}
 
 
@@ -28,6 +29,8 @@ constructor(private userService: UserService, private http: HttpClient, private 
     if(localStorage.getItem('token'))
     {
       this.getData();
+      this.getUserDetails();
+
     }
       else{
         this.route.navigate(['/login']);
@@ -35,12 +38,26 @@ constructor(private userService: UserService, private http: HttpClient, private 
     }
 
 
+    getUserDetails()
+    {
+      this.userService.getUserDetails().subscribe(response =>
+         {
+           this.userdetail = response;
+           console.log(response);
+    },
+    error =>  {
+      console.log('error', error);
+    });
+    }
+
+
+
   getData()
   {
     this.userService.getData().subscribe(response =>
        {
          this.ProductDetails = response;
-         console.log(response);
+        // console.log(response);
   },
   error =>  {
     console.log('error', error);

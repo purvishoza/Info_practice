@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { RaciComponent} from './raci/raci.component';
 import {AuthGuard} from './auth.guard';
 import { UserComponent } from './user/user.component';
+//import { GroupComponent } from './group/group.component';
 
 const routes: Routes = [
   {

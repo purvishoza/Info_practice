@@ -10,6 +10,7 @@ import { RaciComponent } from './raci/raci.component';
 import {UserService} from './user.service';
 import {AuthGuard} from './auth.guard';
 import { UserComponent } from './user/user.component';
+//import { GroupPipe } from './group.pipe';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { UserComponent } from './user/user.component';
     LoginComponent,
     RaciComponent,
     UserComponent,
+    
 
   ],
   imports: [
